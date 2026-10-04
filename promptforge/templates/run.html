@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Eval run: {{ result.prompt_name }} v{{ result.prompt_version }}</h2>
+<p>Test set: <strong>{{ result.test_set }}</strong> | Mean score: <strong>{{ result.mean_score }}</strong></p>
+{% for c in result.cases %}
+<div class="card">
+  <h4>{{ c.case_id }} <span class="score">{{ "%.3f"|format(c.total) }}</span></h4>
+  <p class="output">{{ c.output }}</p>
+  <table>
+    <tr><th>scorer</th><th>score</th><th>detail</th></tr>
+    {% for b in c.breakdown %}
+    <tr><td>{{ b.name }}</td><td>{{ "%.3f"|format(b.score) }}</td><td>{{ b.detail }}</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endfor %}
+{% endblock %}

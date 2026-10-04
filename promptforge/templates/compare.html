@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>A/B compare prompt versions</h2>
+<form method="post">
+  {% for name in names %}
+  <label><input type="checkbox" name="names" value="{{ name }}"> {{ name }}</label><br>
+  {% endfor %}
+  <p><button class="btn" type="submit">Compare</button></p>
+</form>
+{% if results %}
+<h3>Results (best first)</h3>
+<table>
+  <tr><th>prompt</th><th>version</th><th>mean score</th></tr>
+  {% for r in results %}
+  <tr class="{% if loop.first %}winner{% endif %}">
+    <td>{{ r.prompt_name }}</td><td>v{{ r.prompt_version }}</td><td>{{ "%.4f"|format(r.mean_score) }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

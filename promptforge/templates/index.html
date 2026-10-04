@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Prompt versions</h2>
+{% if best %}
+<p class="best">Current champion: <strong>{{ best.prompt_name }} v{{ best.prompt_version }}</strong>
+(mean {{ best.mean_score }})</p>
+{% endif %}
+{% for p in prompts %}
+<div class="card">
+  <h3>{{ p.name }} <span class="pill">{{ p.versions|length }} version(s)</span></h3>
+  <ul>
+  {% for v in p.versions %}
+    <li>
+      <strong>v{{ v.version }}</strong> {{ v.description }}
+      <a href="{{ url_for('run', name=p.name, version=v.version) }}">Run eval</a>
+    </li>
+  {% endfor %}
+  </ul>
+  <a class="btn" href="{{ url_for('run', name=p.name) }}">Run latest eval</a>
+</div>
+{% endfor %}
+{% endblock %}

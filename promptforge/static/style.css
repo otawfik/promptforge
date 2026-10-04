@@ -1,0 +1,14 @@
+body { font-family: system-ui, -apple-system, sans-serif; max-width: 900px; margin: 0 auto; padding: 0 1rem; background: #faf7f2; color: #2b2620; }
+header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid #e85d2f; padding: 1rem 0; }
+header h1 a { color: #e85d2f; text-decoration: none; }
+nav a { margin-left: 1rem; color: #2b2620; font-weight: 600; }
+.card { background: #fff; border: 1px solid #e5ded3; border-radius: 10px; padding: 1rem; margin: 1rem 0; }
+.pill { background: #eee; border-radius: 999px; padding: 0.1rem 0.6rem; font-size: 0.8rem; }
+.btn { display: inline-block; background: #e85d2f; color: #fff; border: none; border-radius: 8px; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; cursor: pointer; }
+.score { float: right; background: #e85d2f; color: #fff; border-radius: 8px; padding: 0.1rem 0.6rem; }
+.output { font-style: italic; background: #faf7f2; padding: 0.6rem; border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0; }
+th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #e5ded3; font-size: 0.9rem; }
+tr.winner td { background: #fff3e2; font-weight: 700; }
+.best { background: #fff3e2; padding: 0.6rem; border-radius: 8px; }
+footer { margin: 2rem 0; color: #8a7f70; font-size: 0.85rem; }

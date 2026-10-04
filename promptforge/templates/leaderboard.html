@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Leaderboard</h2>
+{% if ranked %}
+<table>
+  <tr><th>rank</th><th>prompt</th><th>test set</th><th>mean score</th></tr>
+  {% for row in ranked %}
+  <tr class="{% if loop.first %}winner{% endif %}">
+    <td>{{ loop.index }}</td>
+    <td>{{ row.prompt_name }} v{{ row.prompt_version }}</td>
+    <td>{{ row.test_set }}</td>
+    <td>{{ "%.4f"|format(row.mean_score) }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No runs recorded yet.</p>
+{% endif %}
+{% endblock %}
