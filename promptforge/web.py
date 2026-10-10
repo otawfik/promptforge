@@ -16,7 +16,10 @@ from .store import PromptStore
 def create_app(store: PromptStore | None = None, results_path: str | None = None) -> Flask:
     app = Flask(__name__)
 
-    state_dir = os.path.join(os.path.expanduser("~"), ".promptforge")
+    # serverless hosts (Vercel) only allow writes under /tmp; PROMPTFORGE_STATE_DIR overrides either way
+    state_dir = os.environ.get("PROMPTFORGE_STATE_DIR") or (
+        "/tmp/promptforge" if os.environ.get("VERCEL") else os.path.join(os.path.expanduser("~"), ".promptforge")
+    )
     app.config["STORE"] = store or PromptStore(os.path.join(state_dir, "prompts.json"))
     seed_store(app.config["STORE"])
     app.config["BOARD"] = Leaderboard(
