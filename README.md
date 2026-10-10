@@ -1,10 +1,14 @@
 # PromptForge
 
+[![tests](https://github.com/otawfik/promptforge/actions/workflows/ci.yml/badge.svg)](https://github.com/otawfik/promptforge/actions/workflows/ci.yml)
+
 Test, score, and version prompts like code.
 
 PromptForge is a lightweight prompt engineering workbench. Register prompt templates, version them as you iterate, run them against test sets, score the outputs with local heuristics, A/B test versions head to head, and keep an all-time leaderboard of what worked. No API keys required: a deterministic local mock model and lexicon-based scorers make the whole loop run fully offline, with a documented path to swap in a real LLM when you want one.
 
 The bundled demo is a **roast battle**: three roasting prompt styles (wholesome, savage, structured) compete over 12 roast targets, judged on spice, structure, keyword coverage, and relevance.
+
+![PromptForge eval run: per-case scores across six scorers](screenshots/eval-run.jpg)
 
 ## Features
 
@@ -109,4 +113,4 @@ pytest tests/ -q
 
 ## Screenshots
 
-_Screenshots of the web UI (prompt list, eval run with per-case score breakdowns, A/B comparison, leaderboard) go here. Run `python app.py` and visit http://localhost:5001 to capture them._
+![PromptForge leaderboard: three prompt versions ranked by mean score](screenshots/leaderboard.jpg)
