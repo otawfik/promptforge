@@ -2,6 +2,8 @@
 
 [![tests](https://github.com/otawfik/promptforge/actions/workflows/ci.yml/badge.svg)](https://github.com/otawfik/promptforge/actions/workflows/ci.yml)
 
+**[▶ Live demo](https://promptforge-gamma-pearl.vercel.app)**
+
 Test, score, and version prompts like code.
 
 PromptForge is a lightweight prompt engineering workbench. Register prompt templates, version them as you iterate, run them against test sets, score the outputs with local heuristics, A/B test versions head to head, and keep an all-time leaderboard of what worked. No API keys required: a deterministic local mock model and lexicon-based scorers make the whole loop run fully offline, with a documented path to swap in a real LLM when you want one.
